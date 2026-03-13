@@ -1,3 +1,6 @@
 class and obj
 class has data/attribute and function/mathod
 why python is called OOP?
+4. end to end chatbook class
+5. encapsulation
+6.code reusability

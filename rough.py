@@ -1,6 +1,3 @@
-lst=[1,2,3]
+from oops_proj import chatbook
 
-my_str='Mlops playlist'
-my_int=150
-
-print(type(my_int))
+user1=chatbook()
