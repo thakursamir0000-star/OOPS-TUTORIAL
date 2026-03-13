@@ -21,12 +21,12 @@ class chatbook:
         elif user_input=='2':
             self.login()
         elif user_input=='3':
-            pass
+            self.write_post()
         elif user_input=='4':
             pass
         else:
             exit()
-
+            
     def signup(self):
         self.username=input('Enter your username')
         self.password=input('set your password')
@@ -44,6 +44,15 @@ class chatbook:
                 self.loggedin=True
             else:
                 print('Invalid credentials')
+        print("\n")
+        self.menu()
+    
+    def write_post(self):
+        if self.loggedin:
+            post=input('Write your post here')
+            print('Post published')
+        else:
+            print('Please login to write a post')
         print("\n")
         self.menu()
 
