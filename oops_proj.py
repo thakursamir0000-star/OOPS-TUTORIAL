@@ -3,7 +3,7 @@ class chatbook:
     def __init__(self):
         self.username=''
         self.password=''
-        self.login=False
+        self.loggedin=False
         self.menu()
 
 
@@ -17,15 +17,34 @@ class chatbook:
                              """
                                )
         if user_input=='1':
-            pass
+            self.signup()
         elif user_input=='2':
-            pass
+            self.login()
         elif user_input=='3':
             pass
         elif user_input=='4':
             pass
         else:
             exit()
-    
+
+    def signup(self):
+        self.username=input('Enter your username')
+        self.password=input('set your password')
+        print('Signup successful')
+        
+        self.menu()
+    def login(self):
+        if self.username=='' and self.password=='':
+            print('No user found, please signup first')
+        else:    
+            username=input('Enter your username')
+            password=input('Enter your password')
+            if self.username==username and self.password==password:
+                print('Login successful')
+                self.loggedin=True
+            else:
+                print('Invalid credentials')
+        print("\n")
+        self.menu()
 
 obj=chatbook()
