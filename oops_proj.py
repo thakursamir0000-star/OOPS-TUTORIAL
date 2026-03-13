@@ -15,7 +15,7 @@ class chatbook:
                              4. press 4 to msg a friend
                              5. press any other key to exit
                              """
-                               )
+                               ).strip()
         if user_input=='1':
             self.signup()
         elif user_input=='2':
@@ -23,10 +23,10 @@ class chatbook:
         elif user_input=='3':
             self.write_post()
         elif user_input=='4':
-            pass
+            self.msg_friend()
         else:
             exit()
-            
+
     def signup(self):
         self.username=input('Enter your username')
         self.password=input('set your password')
@@ -48,11 +48,21 @@ class chatbook:
         self.menu()
     
     def write_post(self):
-        if self.loggedin:
+        if self.loggedin==True:
             post=input('Write your post here')
             print('Post published')
         else:
             print('Please login to write a post')
+        print("\n")
+        self.menu()
+
+    def msg_friend(self):
+        if self.loggedin==True:
+            friend=input('Enter your friend username')
+            msg=input('Enter your message')
+            print('Message sent')
+        else:
+            print('Please login to message a friend')
         print("\n")
         self.menu()
 
